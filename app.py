@@ -23,7 +23,7 @@ if st.button("Match Jobs") and resume_file:
 
     st.success("Here are your top matches:")
     for job in ranked:
-        st.subheader(f"{job['title']} at {job['company']']}")
+        st.subheader(f"{job['title']} at {job['company']}")
         st.write(job["summary"][:300] + "...")
         st.write(f"🔗 [Apply here]({job['link']})")
         st.write(f"🧠 Match Score: {round(job['score'], 2)}")
