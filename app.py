@@ -6,7 +6,8 @@ st.title("AI Job Search Agent")
 query = st.text_input("Job Title", "Python Developer")
 location = st.text_input("Location", "London")
 
-search_url = f"https://remotive.com/api/remote-jobs?search={query}"
+//search_url = f"https://remotive.com/api/remote-jobs?search={query}"
+search_url = f"https://www.monster.com/jobs/search?q={query}&where=London%2C+UK"
 st.write(f"📡 Query URL: {search_url}")
 
 if st.button("Search"):
