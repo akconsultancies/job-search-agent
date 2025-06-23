@@ -1,7 +1,7 @@
 import requests
 
 def get_jobs_from_remotive(query, limit=10):
-    //url = f"https://remotive.com/api/remote-jobs?search={query}"
+    #url = f"https://remotive.com/api/remote-jobs?search={query}"
     url = f"https://www.monster.com/jobs/search?q={query}&where=London%2C+UK"
     jobs = []
     
