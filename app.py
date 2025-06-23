@@ -6,6 +6,9 @@ st.title("AI Job Search Agent")
 query = st.text_input("Job Title", "Python Developer")
 location = st.text_input("Location", "London")
 
+search_url = f"https://remotive.io/api/remote-jobs?search={query}"
+st.write(f"📡 Query URL: {search_url}")
+
 if st.button("Search"):
     jobs = get_jobs_from_remotive(query)
     if not jobs:
