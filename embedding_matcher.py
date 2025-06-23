@@ -1,7 +1,7 @@
 import openai
 import numpy as np
 
-openai.api_key = "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"  # Replace with env variable for security
+openai.api_key = st.secrets["OPENAI_API_KEY"]  # Replace with env variable for security
 
 def get_embedding(text, model="text-embedding-ada-002"):
     text = text.replace("\n", " ")
