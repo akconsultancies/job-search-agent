@@ -3,7 +3,10 @@ from openai import OpenAI
 import os
 import numpy as np
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI(
+    api_key=os.getenv("OPENAI_API_KEY"),
+    project=os.getenv("OPENAI_PROJECT")
+)
 
 def get_embedding(text, model="text-embedding-ada-002"):
     text = text.replace("\n", " ")
