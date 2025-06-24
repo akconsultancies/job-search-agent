@@ -1,13 +1,14 @@
 import streamlit as st
-import openai
+from openai import OpenAI
+import os
 import numpy as np
 
-openai.api_key = st.secrets["OPENAI_API_KEY"]  # Replace with env variable for security
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 def get_embedding(text, model="text-embedding-ada-002"):
     text = text.replace("\n", " ")
-    result = openai.Embedding.create(input=[text], model=model)
-    return result['data'][0]['embedding']
+    result = client.embeddings.create(input=text, model=model)
+    return result.data[0].embedding
 
 def cosine_similarity(vec1, vec2):
     a = np.array(vec1)
